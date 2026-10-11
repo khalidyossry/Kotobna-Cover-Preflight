@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kotabna Cover Preflight — فحص أغلفة الكتب قبل الطباعة</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand"><span class="logo">ك</span><span>كُتُبنا - Kotobna</span></div>
+  <span class="tag">أداة داخلية · تعمل داخل المتصفح فقط</span>
+</header>
+
+<main id="app" class="wrap">
+  <section class="hero">
+    <h1>Kotobna Cover Preflight</h1>
+    <p>تحليل وفحص ملفات أغلفة الكتب قبل الطباعة</p>
+  </section>
+
+  <section class="upload">
+    <div id="drop" class="drop" role="button" tabindex="0" aria-label="اختيار ملف الغلاف">
+      <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16V4m0 0L7.5 8.5M12 4l4.5 4.5"/><path d="M4 15v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"/></svg>
+      <strong>اسحب ملف الغلاف هنا أو اضغط للاختيار</strong>
+      <span>JPG · PNG · PDF · لا يُرفع الملف إلى أي خادم</span>
+      <input id="file" type="file" accept=".jpg,.jpeg,.png,.pdf,image/jpeg,image/png,application/pdf" hidden>
+    </div>
+    <div id="err" class="alert" hidden role="alert"></div>
+  </section>
+
+  <div id="busy" class="busy" hidden><i></i> جارٍ تحليل الملف…</div>
+
+  <section id="dash" class="dash" hidden>
+    <aside class="card preview">
+      <div class="pv-img"><img id="pv" alt="معاينة الغلاف"><p id="pvnone" hidden>تعذّرت المعاينة (الصورة كبيرة أو بصيغة لا يعرضها المتصفح)، والتحليل لم يتأثر.</p></div>
+      <div class="pv-meta">
+        <b id="fname" dir="ltr"></b>
+        <span id="fmeta" dir="ltr"></span>
+      </div>
+      <div class="btns">
+        <button id="again" class="btn">إزالة الملف ورفع آخر</button>
+        <button id="copy" class="btn ghost">نسخ التقرير</button>
+      </div>
+    </aside>
+
+    <div class="main">
+      <div id="metrics" class="metrics"></div>
+      <div id="spine" class="card"></div>
+      <div class="card">
+        <div class="sec-h"><h2>Preflight Check</h2><div id="sum" class="sum"></div></div>
+        <ul id="checks" class="checks"></ul>
+      </div>
+      <div id="final" class="final"></div>
+    </div>
+  </section>
+</main>
+<footer class="foot">تتم المعالجة محليًا في المتصفح (قراءة PDF تستعمل مكتبة pdf.js تُحمَّل من CDN، والملف نفسه لا يُرفع) · الحسابات تعتمد على بيانات الدقة المخزّنة داخل الملف
+  <br />
+        تم برمجة هذه الاداة بكل حب لدار نشر كتبنا بواسطة
+        <a class="name" href="https://wa.me/201125616799"> خالد يسرى</a>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
